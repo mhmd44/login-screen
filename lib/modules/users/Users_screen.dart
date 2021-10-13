@@ -2,18 +2,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/models/user/user_model.dart';
 
-class UserModel{
-  final int id;
-  final String name;
-  final String phone;
 
-  UserModel({
-    required this.id,
-    required this.name,
-    required this.phone,
-  });
-}
 
 class UsersScreen extends StatelessWidget {
 

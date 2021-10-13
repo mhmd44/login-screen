@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/Users_screen.dart';
-import 'package:flutter_app/bmi_result_screen.dart';
-import 'package:flutter_app/bmi_screen.dart';
+import 'package:flutter_app/layout/home_layout.dart';
+import 'package:flutter_app/modules/messenger/messenger_screen.dart';
+import 'package:flutter_app/modules/users/Users_screen.dart';
+import 'package:flutter_app/modules/bmi_result/bmi_result_screen.dart';
+import 'package:flutter_app/modules/bmi/bmi_screen.dart';
 import 'package:flutter_app/modules/login/login_screen.dart';
-import 'package:flutter_app/messenger_screen2.dart';
+import 'package:flutter_app/modules/messenger/messenger_screen2.dart';
 
 void main()
 {
@@ -20,8 +22,8 @@ class MyApp extends StatelessWidget
   {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: UsersScreen(),
-    );
+      home: HomeLayout(),
+      );
   }
 }
 

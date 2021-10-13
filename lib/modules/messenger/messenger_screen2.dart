@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Messenger extends StatelessWidget {
+class Messenger2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +80,7 @@ class Messenger extends StatelessWidget {
                 height: 20,
               ),
               Container(
-                height: 105,
+                height: 120,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => buildStoryItem(),
