@@ -33,19 +33,23 @@ Widget defaultFormField({
   required  String? Function(String?)? validate,   //resolved
   required TextInputType type,
   Function (String)? onSubmit,
+  Function()? onTap,
   Function (String)? onChange,
   required  String label,
   required  IconData prefix,
   bool ispassword= false,
+  bool isClickable =true,
    IconData? suffix,
    Function()? suffixpressed,
 }) => TextFormField(
+  enabled: isClickable,
   validator: validate,
   controller: controller,
   keyboardType: type,
   onFieldSubmitted: onSubmit,
   onChanged: onChange,
   obscureText: ispassword,
+  onTap: onTap,
   decoration:  InputDecoration(
     labelText: label,
     prefixIcon: Icon(prefix),
@@ -54,5 +58,37 @@ Widget defaultFormField({
         icon: Icon(suffix),
       ) : null,
     border: OutlineInputBorder(),
+  ),
+);
+
+Widget buildTaskitem(Map model) =>Padding(
+  padding: const EdgeInsets.all(20.0),
+  child: Row(
+    children: [
+       CircleAvatar(
+        radius: 40,
+        child: Text(
+            '${model["time"]}'
+        ),
+      ),
+       const SizedBox(
+        width: 20,
+      ),
+      Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:  [
+          Text('${model['title']}',
+            style: const TextStyle( fontSize: 16, fontWeight: FontWeight.bold
+            ),
+          ),
+          const Text('2 april 2021',
+            style: TextStyle(
+                color: Colors.grey
+            ),)
+
+        ],
+      ),
+    ],
   ),
 );

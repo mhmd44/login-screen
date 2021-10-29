@@ -6,9 +6,9 @@ import 'package:flutter_app/models/user/user_model.dart';
 
 
 
-class UsersScreen extends StatelessWidget {
+class  UsersScreen extends StatelessWidget {
 
-  List<UserModel> Users = [
+  List<UserModel>  Users = [
     UserModel(
       id: 1,
       name: 'ali aboelsoud',
@@ -71,11 +71,13 @@ class UsersScreen extends StatelessWidget {
     ),
   ];
 
+  UsersScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Users', ),
+        title: const Text('Users'),
       ),
       body: ListView.separated(
           itemBuilder: (context, index)=>buildUserItem(Users[index]) ,
@@ -98,17 +100,17 @@ class UsersScreen extends StatelessWidget {
         CircleAvatar(
           radius: 25,
           child: Text('${user.id}'
-            ,style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+            ,style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
         ),
-        SizedBox(width: 20,),
+        const SizedBox(width: 20,),
         Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('${user.name}'
-              ,style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
-            Text('${user.phone}',
-              style: TextStyle(color: Colors.grey),),
+            Text(user.name
+              ,style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+            Text(user.phone,
+              style: const TextStyle(color: Colors.grey),),
           ],
         ),
       ],
